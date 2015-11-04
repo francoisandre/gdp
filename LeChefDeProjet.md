@@ -22,3 +22,9 @@ Source : http://blog.mageekbox.net/?post/2012/04/16/Comment-devenir-un-bon-chef-
 
 > **Exercice : Définir les qualités d'un chef de projet**
 >  
+
+## C'est parfois très ingrat
+
+<p align="center">
+<img src="https://raw.githubusercontent.com/francoisandre/gdp/master/images/gwt.png" />
+</p>
