@@ -280,12 +280,13 @@ La MOE a les responsabilités suivantes:
  - Production des livrables
 
 L'équipe de la MOE se structure fréquemment en 
- - **Le chef de projet**
-	 - planifie les travaux de réalisation
-	 - coordonne et anime l'équipe de développement 
-	 - identifie les besoins internes nécessaires à la réalisation du projet (formations, matériels, ...)
-	 - s'assure du respect des jalons de livraison
-	 - dialogue avec la MOA 
+
+- **Le chef de projet**
+		 - planifie les travaux de réalisation
+		 - coordonne et anime l'équipe de développement 
+		 - identifie les besoins internes nécessaires à la réalisation du projet (formations, matériels, ...)
+		 - s'assure du respect des jalons de livraison
+		 - dialogue avec la MOA 
 
 **Les qualités de communicant sont indispensables au chef de projet**
 
@@ -535,10 +536,10 @@ Cette rédaction implique d'interroger
 - Une identité visuelle (logo)
 - Une certain nombre de modèles documentaires :
 		 - Compte rendu
-		 - Présentation
+		 - Présentation (http://thepopp.com/templates/)
 		 - Rapport
 		 - Site internet du projet
-		 - Espace documentaire (G.E.D.) - Partie publique / Partie privée
+		 - Espace documentaire (G.E.D.) - Partie publique / Partie privée (Ex: ownCloud)
 		 - ...
 
 
@@ -560,13 +561,13 @@ MOE
 En réponse au cahier des charges, la MOE doit proposer une organisation autour du projet, le *plan projet*:
 
 Il doit définir:
-- Les éléments livrés (application, documentation utilisateur, supports de formation, ...
-- )
+
+- Les éléments livrés (application, documentation utilisateur, supports de formation, ...)
 - les réserves par rapport à la demande initiale
-- l'organisation MOE proposée  (sous traitance  éventuelle)
+- l'organisation MOE proposée  (CV intervenants, sous traitance  éventuelle)
 - les ressources demandées 
-	- financières (calendrier des paiements, ...)
-	- et humaines
+		- financières (calendrier des paiements, ...)
+		- et humaines
 - les délais de réalisation
 	- planification macroscopique
 	- contenu sprint 0 (pour les méthodes agiles)
@@ -581,6 +582,95 @@ Il doit définir:
 
 *Exemple de plan projet :* 
 https://sourcesup.cru.fr/portailresif/doc/020_Qualite&Normes/Plans&Conventions/Projet/RESIF_Dossier_Candidature_V1.0.pdf
+
+#### Réunions (Comitologie)
+##### Approche classiques
+Trois type de réunions permettant l'escalade des problèmes:
+
+ - Réunions de suivi.
+	 - Rythme: hebdomadaire, bimensuel
+	 - Acteurs : Chefs de projet MOA/MOE
+	 - Actions : Revue d'avancement, identification des problèmes...
+	 
+- Comité de pilotage
+	- Rythme: mensuel, bimestriel
+	 - Acteurs : Equipe MOA/MOE
+	 - Actions : Avancement, Priorisation, Analyse des problèmes, Suivi des risques, Suivi des indicateurs...
+
+- Comité de direction
+	- Rythme: semestriel, annuel
+	 - Acteurs : MOA + Représentants métier
+	 - Actions : Décisions stratégiques (ressources, lancement de tranches, mise en production) 
+
+> **ODJ & CR**
+ Un **ordre du jour** (ODJ) envoyé au préalable indiquant 
+	- Points principaux à aborder
+	- Pièces jointes éventuelles
+	- Horaire et Durée
+	- Lieu
+	- Informations diverses (paramètres de connexion, ...)
+Un **compte rendu** (CR) validé par les participants
+	- Listes des participants
+	- Points abordés (dont point sur les actions ouvertes)
+	- Liste des actions 
+	- **Date prochaine réunion**
+> 
+> Le **compte rendu** est impératif même si le projet se déroule bien car il **fera foi en cas de désaccord ultérieur**
+>
+
+##### Approche agile
+Chaque itération va reposer sur les itérations suivantes: 
+
+ - Planification du sprint ; Définition du backlog du sprint (Equipe projet et ProductOwner)
+ - Stand-up meeting : 15 minutes tous les jours (Equipe projet)
+	 - Qu'est ce que j'ai fait hier ?
+	 - Qu'est ce que je vais faire aujourd'hui ?
+	 - Ai-je rencontré des soucis ?
+ - Revue de Sprint : Démonstration au client
+ - Rétrospective : Analyse de soucis, calcul de vélocité
+ 
+ D'après http://www.aubryconseil.com/post/2007/07/09/257-les-reunions-d-un-projet-agile.
+ 
+> **Question** : Un compte rendu est-il nécessaire ?	
+
+#### Gestion des risques
+
+##### Exemples de risques
+- Le système ne sera jamais livré.
+− Le système sera livré en retard.
+− Le budget sera dépassé.
+− Le projet nécessitera une implication des utilisateurs trop importante.
+− Le système n'aura pas toutes les fonctionnalités requises.
+− Le système livré comportera des erreurs.
+− Le système sera difficile à utiliser.
+− Le système tombera en panne ou ne sera pas assez fiable.
+− La maintenance du système sera difficile et/ou coûteuse.
+− Le système pourra difficilement évolue
+
+
+##### Tous les risques ne se valent pas
+
+<p align="center" >
+<img src="https://raw.githubusercontent.com/francoisandre/gdp/master/images/risques.png"   />
+</p>
+
+**IMPACT** : probabilité qu'un facteur de risque s'avère ET gravité en cas d'apparition
+
+- **Probabilité** = fréquence de l’événement / nombre total de cas
+	de 1 à 4 (très probable, probable, peu probable, très peu probable)
+
+- **Gravité** = coût des dommages + coût de remise en état
+de 1 à 4 (très probable, probable, peu probable, très peu probable)
+
+* - *Sévérité** = probabilité x gravité classement par sévérité de 1 à 16
+
+##### Suivi des risques
+- Approche classique
+	- Les risques sont évaluées régulièrement
+	- Les risques ayant une sévérité trop élevée doivent être traités par des actions immédiates
+	-
+- Approche agile
+	- Les stories sont priorisées par valeur client.
 
 #### Planification
 
@@ -619,6 +709,8 @@ Les conséquences sont en général difficiles humainement pour les membre de l'
 
 ##### Approches agiles
 
+![enter image description here](http://4.bp.blogspot.com/__1WQBOnqoI8/TQ2mefg_exI/AAAAAAAAAuw/c1bLOMyXV18/s1600/burndown-chart-3.jpg)
+
 En opposition,  l'approche agile :
 
  - fournit une estimation globale approximative
@@ -639,7 +731,12 @@ Avantages :
 
 Inconvénients :
  - Nécessite une banque d'informations sur les projets réalisés
+
+###### Extrapolation à partir d'une partie réalisée
+
 ###### Estimation via points de fonction
+
+http://www.innovaxion.net/app/download/2805293010/Points_de_fonction.pdf?t=1264872182
 
 ###### Extrapoler la charge globale
 
@@ -1076,10 +1173,13 @@ L'exploitation courante d'un logiciel ne nécessite pas les mêmes modes de trav
 	- Identification des méthodes et processus à revoir
 	- Améliorer les méthodes d'estimation de la charge  
 
+### Organisation
 
+ Classiquement 
+ 
+ - Vérification d'aptitude (VA) : période de 1 mois durant laquelle la recette va être pratiquée: 
+ - Vérification de service régulier (VSR) : période de 3 mois durant laquelle l'application est mise en exploitation en conditions réelle - éventuellement en accès limité.
+ 
 
-Dette technique
-
-http://www.processus-amelioration.fr/comitologie/
 
 ## Etape 8 - Le MCO
