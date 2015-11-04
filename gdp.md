@@ -251,13 +251,13 @@ L’équipe de la MOA se structure fréquemment en
  - Assure la diffusion des mises à jour du logiciel
 
 Remarques:
-  - Selon les typologies de projet, le rôle de l'équipe d'exploitation peut varier :
-	  - Client lourd classique (nécessité d'intervenir sur les postes)
-	  - Client lourd mobile (l'application est mise à disposition sur un *store*)
-	  - Client internet (pas d'installation / mise à jour à effectuer)
-	  - SaaS - Software as a Service - L'hébergement est un service fourni par un tiers
- 
 
+- Selon les typologies de projet, le rôle de l'équipe d'exploitation peut varier :
+	- **Client lourd classique** (nécessité d'intervenir sur les postes)
+	- **Client lourd mobile** (l'application est mise à disposition sur un *store*)
+	- **Client internet** (pas d'installation / mise à jour à effectuer)
+	- **SaaS** - Software as a Service - L'hébergement est un service fourni par un tiers
+ 
 
 ## Maîtrise d'ouvrage déléguée /  Assistance à maîtrise d'ouvrage - AMOA
 
@@ -298,6 +298,7 @@ L'équipe de la MOE se structure fréquemment en
 Remarque : Une communication directe entre les membres de l'équipe projet et la MOA est parfois contre productive
 	
 # Les cycles de développement
+Un cycle fréquemment rencontré:
 
 <p align="center">
 <img src="https://raw.githubusercontent.com/francoisandre/gdp/master/images/gdp.gif"  style="border:1px solid black" />
@@ -393,6 +394,8 @@ Durant les années 90, plusieurs méthodes incrémentales sont proposées. Elles
 > Il nous faudra donc réécrire notre algorithme jusqu'à ce que notre programme de test retourne les valeurs attendues.
 >
 >Pour simplifier les recettes et vérifier l'absence de régression les méthodes itératives préconisent de mettre en place des programmes de test - on parle de *tests automatisés* - sur l'ensemble du produit développé, au niveau *unitaire*, *intégration*, *fonctionnel*.  
+
+>**Question:** Comment l'application sait qu'un programme est un programme de test ?
 
 
 ### Le manifeste agile
@@ -535,14 +538,15 @@ Cette rédaction implique d'interroger
 		 - Présentation
 		 - Rapport
 		 - Site internet du projet
-		 - Espace documentaire (G.E.D.)
+		 - Espace documentaire (G.E.D.) - Partie publique / Partie privée
 		 - ...
 
 
 ### Exemple
-Cahier des charges du portail RESIF : https://sourcesup.renater.fr/portailresif/doc/010_Cadrage/Demande/Cahier_des_charges/CDCF-PortailRESIFV2.0.pdf
+Cahier des charges du portail RESIF : 
+https://sourcesup.renater.fr/portailresif/doc/010_Cadrage/Demande/Cahier_des_charges/CDCF-PortailRESIFV2.0.pdf
 
-Quelques questions
+> **Quelques questions**
 - Qui sont les différents acteurs ?
 - Quels sont les exigences fonctionnelles ?
 - Que penser du paragraphe 2.2 ?
@@ -575,7 +579,8 @@ Il doit définir:
 	-  plateforme de développement
 	-  outils (gestionnaire d'anomalie, ... )
 
-*Exemple de plan projet :* https://sourcesup.cru.fr/portailresif/doc/020_Qualite&Normes/Plans&Conventions/Projet/RESIF_Dossier_Candidature_V1.0.pdf
+*Exemple de plan projet :* 
+https://sourcesup.cru.fr/portailresif/doc/020_Qualite&Normes/Plans&Conventions/Projet/RESIF_Dossier_Candidature_V1.0.pdf
 
 #### Planification
 
@@ -696,14 +701,15 @@ https://sourcesup.renater.fr/portailresif/doc/020_Qualite&Normes/Plans&Conventio
 > - Inconvénients
 	- Peu esthétique (getVoiture, setNomEtudiant) (car les termes *get* et *set* dans ce cas sont des standards)
 	- Peu adapté aux projets internationaux
-	- Noms pas toujours efficaces (verbeux) : *Love me do* est plus efficace que *que je t'aime*
+	- Noms pas toujours efficaces (verbeux) : *Love me do* est plus efficace que *Que je t'aime*
+	- Problèmes des caractères spéciaux (accents, trémas)
 
 >**Utilisation de l'anglais:**
 > - On inverse avantages et inconvénients
 >
 > **Exemple de nom maitrise de l'anglais**
 >  *displayTreeChannels* au lieu de  *displayChanelTree*
->
+
 
 - Planning général /détaillé
 	- Outils: MS-Project, Excel, GanttProject...
@@ -736,16 +742,14 @@ La MOE va commencer à appréhender le domaine métier de la MOA, toutefois,  el
 
 ### Livrables
 
- - Maquettes
-	 - Outils : Pencil, Draw.io, Balsamiq... 
- - Diagramme des cas d'utilisations
-	 - Outils : yuml.me, https://bramp.github.io/js-sequence-diagrams/ , ArgoUML, StarUML,... 
- -  Référentiel d'exigences
+ - Dossier de Spécifications Fonctionnelles Générales. 
+ Il contient 
+  - Diagramme des cas d'utilisations
+	 - Outils : yuml.me, https://bramp.github.io/js-sequence-diagrams/ , ArgoUML, StarUML, Visual Paradigm... 
+  -  Référentiel d'exigences
 	 - Excel
- - Cinématique de l'application
-	 - Cf. Outils UML.
 
-#### Diagramme des acteurs
+#### Identification des acteurs
 ##### Principe
 Il est nécessaire, dans un premier temps, d'identifier les différents acteurs qui vont interagir avec le projet.
 
@@ -762,8 +766,6 @@ Par exemple, dans le site web de vente en ligne on peut s'attendre à avoir les 
 1. Il peut également y avoir des **acteurs non humains** :
 	- Un système de minuteur qui va régulièrement intervenir sur le logiciel : calcul des statistiques du jour tout les soirs à minuit, arrêt du logiciel pour sauvegarder la base de données),...
 	- Une requête provenant d'un autre ordinateur : moteur d'indexation, moissonnage,...
-
-
 Prendre en compte les acteurs non humains permet de cerner l'intégralité du périmètre du projet.
 
 2.  Certains acteurs comportent des actions communes. 
@@ -783,22 +785,116 @@ Définir des liens d'héritage entre les acteurs permet de mieux les comprendre.
  Un acteur, humain ou non est représenté de la manière suivante
 ![enter image description here](http://yuml.me/bf9ba150)
 
-![enter image description here](http://yuml.me/bf9ba150)
+L'héritage entre deux acteurs se représente de la manière suivante
 
- > **Petite digression** : une application **REST**
- > 
- >  Initialement les applications WEB étaient juste des arborescences de fichiers situées sous une racine.
- >  Par exemple :
- >  - http://www.bacqueferronnerie.fr/Escaliers_P1_2.htm  --> Le fichier *Escaliers_P1_2.htm* existe physiquement et le serveur web ne fait que le transmettre au navigateur
- >  -  http://www.bacqueferronnerie.fr/slimbox-1.58/Images_escaliers/elicoidal_GF_small.jpg --> le fichier *elicoidal_GF_small.jpg*  existe physiquement dans le répertoire *slimbox-1.58/Images_escaliers/*
-> La preuve : http://www.bacqueferronnerie.fr/slimbox-1.58/Images_escaliers/
->
-> **Il y a donc correspondance physique entre les URL et les ressources dans ce genre d'application**
->
-> **Les applications REST étendent la notion d'URL à des ressources non physiquement présentes** 
-> 
-> ![Alt text](./rest.png)
->
+![enter image description here](http://yuml.me/ab2be438)
+
+> **Exercice** : Dresser la liste des acteurs du portail RESIF
+
+#### Diagramme des cas d'utilisation
+##### Principe
+Chaque acteur identifié va interagir avec l'application. 
+Chacune de ces **interactions** est appelée un *cas d'utilisation*
+
+##### Représentation UML 
+ 
+- Une interaction est représentée de la manière suivante:
+![enter image description here](http://yuml.me/f388ca9a)
+
+Remarque: Le nom de l'action débute en général par un **verbe à  m'infinitif** : *Se connecter*, *Ajouter un article au panier*, ...
+
+- Le lien entre un acteur se représente de la manière suivante:
+
+![](http://yuml.me/2d62a0e6)
+
+Plusieurs acteurs peuvent avoir le même cas d'utilisation
+
+![](http://yuml.me/f739550d)
+
+
+- Deux actions peuvent avoir des liens entre elles:
+
+ - **Relation d'inclusion**: Un cas *B* nécessite impérativement dans son fonctionnement un cas *A*
+Exemple: 
+ - A: S'authentifier
+ - B: Passer une commande
+![](http://yuml.me/a1dc8ced)
+
+- **Relation d'inclusion**: Un cas *B* utilise optionnellement dans son fonctionnement un cas *A* (*A* peut ne pas avoir d'existence autonome)
+Exemple: 
+ - A: Créer une nouvelle adresse de livraison
+ - B: Passer une commande
+
+![](http://yuml.me/e91ffc83)
+
+- **Relation d'héritage**: Des cas *B* et *C* spécialisent  *A*
+![](http://yuml.me/9e1a268a)
+Exemple : 
+ A: Passer une commande
+ B: Passer une commande client ordinaire
+ C: Passer une commande client premium
+ 
+On obtient finalement un schéma complet :
+
+![](http://lgl.isnetne.ch/isnet43/phase3/alta/images/Inception_Image137.gif)
+
+Pour des raisons de lisibilité on peut diviser le schéma
+- Par domaine fonctionnel (*package*)
+- Par acteur
+
+> **Question** : doit-on représenter les acteurs *passifs* (un SGBD, un système de fichiers) ?
+
+#### Description des cas d'utilisation
+
+En plus du diagramme général, pour chaque cas d'utilisation, on va fournir une description plus textuelle du cas d'utilisation :
+
+ - Nom du cas d'utilisation
+ - Description globale
+ - Acteurs concernés
+ - Préconditions
+ - Scénario nominal
+ - Scénarios alternatifs
+ - Postconditions
+ - Compléments d'information
+
+*Exemple:* 
+
+**Cas d'utilisation**: Effectuer une commande
+**Description**: Après avoir sélectionné des articles le clients va valider sa commande en fournissant les informations nécessaires.
+**Acteur**: Client authentifié
+**Préconditions**: La panier doit contenir au moins un élément
+**Scénario nominal**
+ 1. Le client valide le contenu de son panier
+ 2. Le client sélectionne une adresse de livraison
+ 3. Le client sélectionné un mode de paiement
+ 4. Le client  indique ses modes de paiement
+ 5. La commande est transmise au système  de gestion des commandes 
+ 6. Un message de confirmation est envoyé au  client
+
+**Scénarios alternatifs**
+2b. L'utilisateur demande la création d'une adresse de livraison, le système se réoriente sur le cas d'activité correspondant avant de revenir.
+...
+
+Afin de faciliter la compréhension, les formalismes suivants peuvent être utilisés au sein de la description :
+
+ - Diagramme de séquence
+ - Diagramme d'états
+ - Diagramme d'activités
+
+#### Liste des exigences
+La liste des exigences contient un rappel de toutes les contraintes non purement fonctionnelles pesant sur l'application.
+
+On peut citer comme exemples classique :
+
+ - Performances
+ - Ergonomie
+ - Compatibilité avec une norme, le schéma directeur
+ - Disponibilité de l'application (24/7)
+ - Multilinguisme
+ - Hébergement
+ - ...
+
+La liste des exigences doit faire apparaître pour chacune d'elle les dispositions mises en oeuvre pour les respecter et les tester.  
 
 ## Etape 4 - Spécification détaillées
 
@@ -808,8 +904,15 @@ Définir des liens d'héritage entre les acteurs permet de mieux les comprendre.
 
 ![http://img.archiexpo.fr/images_ae/photo-mg/four-electrique-double-encastrable-56157-2147571.jpg](http://img.archiexpo.fr/images_ae/photo-mg/four-electrique-double-encastrable-56157-2147571.jpg)
 
-
 ![enter image description here](http://www.rescue-forum.com/fichiers/bazar-rescue-170/cherche-capsules-bouteilles-bieres-boite-soda-capsule-biere-300x200.jpg-274429d1434043197)
+
+<p align="">
+<img src="https://raw.githubusercontent.com/francoisandre/gdp/master/images/tasse.png" />
+</p>
+
+<p align="">
+<img src="https://raw.githubusercontent.com/francoisandre/gdp/master/images/play.png" />
+</p>
 
 ![enter image description here](http://www.electricit%C3%A9.fr/wp-content/uploads/2015/03/savoir-changer-prise-450x264.jpg)
 
@@ -817,14 +920,43 @@ Toutefois, parfois ...
 
 ![enter image description here](http://blog.wee-go.com/wp-content/uploads/2013/06/48f26ed19c96b38c51df10d37b3641ce.jpg)
 
- 
+Et que penser de cela ? 
+
+ <p align="">
+<img src="https://raw.githubusercontent.com/francoisandre/gdp/master/images/adaptateur.png" />
+</p>
+
+ <p align="">
+<img src="https://raw.githubusercontent.com/francoisandre/gdp/master/images/rallonge.png" />
+</p>
+
+### Objectifs
+Traditionnellement, l'objectif des spécifications détaillées est de fournir les éléments suivants :
+
+ - Cinématique de l'application
+ - Maquettage des écrans
+ - Règles fonctionnelles
+ - Modèle de données
+ - Architecture technique
+
+Il peut être plus agile de fournir une description basée sur les modèles MVP et A&P
+
+
+Livrables 
+
+ - Maquettes
+	 - Outils : Pencil, Draw.io, Balsamiq... 
+ - Diagramme cinématique  
+
 ## Etape 5 - Le développement
 
 C'est la phase centrale du projet 
 
 L'organisation généralement mise en place repose sur la notion de **forge de développement** : 
 
-![Alt text](./forge.png)
+ <p align="">
+<img src="https://raw.githubusercontent.com/francoisandre/gdp/master/images/forge.png" />
+</p>
 
 **Poste de développement**
  * Outils nécessaires à 
@@ -863,6 +995,7 @@ http://nemo.sonarqube.org/
 http://github.hubspot.com/shepherd/docs/welcome/
 
 Exemple de norme de codage : [Norme de codage Java (Oracle)](http://www.oracle.com/technetwork/java/codeconvtoc-136057.html)
+Autre standard : Maven layout
 
 La norme de codage favorise : 
  - L'intervention de personnes extérieures au projet
@@ -905,14 +1038,15 @@ Un produit est souvent identifié par un numéro de la forme **X.Y.Z**
 >  - Les versions de la forme X.0 correspondent aux versions finales - Elles peuvent être exportées au format *.pdf*
 >  - Les autres versions sont les versions de travail
 
+> La dette technique
+> 
 
 
-
-## Etape XXX - La recette
-
+## Etape 6 - La recette
+Selenium
 
  
-## Etape XXX - La conclusion du projet
+## Etape 7 - La conclusion du projet
  
 ### Une étape nécessaire
  Il est nécessaire de prononcer la fin d'un projet pour 
@@ -923,7 +1057,7 @@ L'exploitation courante d'un logiciel ne nécessite pas les mêmes modes de trav
 
  -  Rythmes de livraison (en fonction du type d'anomalies rencontrées)
  -  Equipe de travail (passage d'une équipe dédiée à une équipe mutualisée)
- - Matériel
+ -  Matériel
 
 **Des raisons humaines** :
 
@@ -938,5 +1072,14 @@ L'exploitation courante d'un logiciel ne nécessite pas les mêmes modes de trav
 
 - Il est nécessaire en fin de projet de retirer enseignements - positifs ou négatifs - du projet afin de thésauriser pour les projets à venir:
 	- Identification des nouvelles compétences acquises réutilisables (et qui à cette compétence)
+	- Identification de code réutilisable
 	- Identification des méthodes et processus à revoir
 	- Améliorer les méthodes d'estimation de la charge  
+
+
+
+Dette technique
+
+http://www.processus-amelioration.fr/comitologie/
+
+## Etape 8 - Le MCO
