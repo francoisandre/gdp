@@ -587,7 +587,7 @@ https://sourcesup.cru.fr/portailresif/doc/020_Qualite&Normes/Plans&Conventions/P
 ##### Approche classiques
 Trois type de réunions permettant l'escalade des problèmes:
 
- - Réunions de suivi.
+- Réunions de suivi.
 	 - Rythme: hebdomadaire, bimensuel
 	 - Acteurs : Chefs de projet MOA/MOE
 	 - Actions : Revue d'avancement, identification des problèmes...
@@ -597,7 +597,8 @@ Trois type de réunions permettant l'escalade des problèmes:
 	 - Acteurs : Equipe MOA/MOE
 	 - Actions : Avancement, Priorisation, Analyse des problèmes, Suivi des risques, Suivi des indicateurs...
 
-- Comité de direction
+-  Comité de direction
+
 	- Rythme: semestriel, annuel
 	 - Acteurs : MOA + Représentants métier
 	 - Actions : Décisions stratégiques (ressources, lancement de tranches, mise en production) 
@@ -707,6 +708,8 @@ Les conséquences sont en général difficiles humainement pour les membre de l'
 	- conflits internes
 	- **désengagement** (turn-over, critiques du client )
 
+Outil : MS-Project, GanttProject
+
 ##### Approches agiles
 
 ![enter image description here](http://4.bp.blogspot.com/__1WQBOnqoI8/TQ2mefg_exI/AAAAAAAAAuw/c1bLOMyXV18/s1600/burndown-chart-3.jpg)
@@ -718,6 +721,8 @@ En opposition,  l'approche agile :
  - priorise les fonctions les plus importantes (pour le client ou d'un point de vue technique)
  - confie l'évaluation de la charge aux développeurs (ex. Poker Planning)
  - essaye, au fil des itérations, de déterminer la capacité de développement par sprint: la *célérité*.
+
+Outil: IceScrum2, Trello
 
 ##### Comment estimer la charge de développement ? (That is the question)
 
@@ -733,6 +738,8 @@ Inconvénients :
  - Nécessite une banque d'informations sur les projets réalisés
 
 ###### Extrapolation à partir d'une partie réalisée
+
+Avantages et Inconvénients 
 
 ###### Estimation via points de fonction
 
@@ -1027,6 +1034,22 @@ Et que penser de cela ?
 <img src="https://raw.githubusercontent.com/francoisandre/gdp/master/images/rallonge.png" />
 </p>
 
+#### En informatique
+
+1. **La réalisation concrète d'une interface est appelée *implémentation***
+
+2. Une interface est définie par
+ - Son nom
+ - La liste des méthodes qu'une  implémentation devra mettre en oeuvre
+
+3 .Représentation UML
+
+![enter image description here](http://yuml.me/9531f9b4)
+
+
+### Acteurs
+MOE
+
 ### Objectifs
 Traditionnellement, l'objectif des spécifications détaillées est de fournir les éléments suivants :
 
@@ -1036,14 +1059,114 @@ Traditionnellement, l'objectif des spécifications détaillées est de fournir l
  - Modèle de données
  - Architecture technique
 
-Il peut être plus agile de fournir une description basée sur les modèles MVP et A&P
+Il peut être plus agile de fournir une description basée sur les modèles **A&P** et **MVP** 
 
+- A&P : Activités and Places
+- MVP : Model - View - Presenter
 
-Livrables 
+### A&P 
 
- - Maquettes
-	 - Outils : Pencil, Draw.io, Balsamiq... 
- - Diagramme cinématique  
+#### Activité 
+Une activité est une partie de l'application correspondant globalement à un cas d'utilisation.
+
+##### Une activité à un cycle de vie
+
+ - OnStart : Ce que fait l'activité pour démarrer.
+ - MayStop : L'activité peut-elle se terminer ?
+ - OnStop : Ce que fait l'activité pour s'arrêter.
+
+##### Enchaînement 
+L'utilisation d'une application revient donc à enchaîner une succession d'activités.
+
+<p align="center" >
+<img src="https://raw.githubusercontent.com/francoisandre/gdp/master/images/ExempleActivites.png"   />
+</p>
+
+#### Remarque 
+Plusieurs activités peuvent s'exécuter simultanément. Ainsi un menu d'application peut être considérée comme une activité
+
+#### Place 
+Une place correspond à **l'état** d'une application.
+Une place contient donc les informations suivantes :
+
+ - **Le nom d'une activité**
+ - **Les informations permettant de reconstituer exactement l'activité**
+
+*Exemple:*
+
+- http://sedoo.sedoo.fr/portailresif/#NetworkConsultPlace:
+- http://sedoo.sedoo.fr/portailresif/#NetworkConsultPlace:FR
+- http://sedoo.sedoo.fr/portailresif/#NetworkConsultPlace:CL
+
+### MVP (ou MVC)
+La décomposition en couche de responsabilités est devenu une approche incontournable permettant de structurer efficacement le code.
+
+Le modèle de conception MVC (https://fr.wikipedia.org/wiki/Mod%C3%A8le-vue-contr%C3%B4leur) est une mise en oeuvre très répendue. MVP en est une version plus adaptée aux applications ajaxifiées.
+
+<p align="center" >
+<img src="https://raw.githubusercontent.com/francoisandre/gdp/master/images/mvp.png"   />
+</p>
+
+- **M (Model)** : Ensemble des données manipulées par l'application
+- **V (View)** : Interface graphique affichant les données et capturant les actions de l'utilisateur
+- **P (Presenter)** : Intelligence du système chargé de faire le lien entre **V** et **M**
+
+#### Description sous forme d'interface
+
+Chaque élément va être défini par une interface et ne va connaitre que les interfaces des autres éléments.
+
+<p align="center" >
+<img src="https://raw.githubusercontent.com/francoisandre/gdp/master/images/mvpEdendu.png"   />
+</p>
+
+Exemple : une vue de Login
+
+![http://yuml.me/80473593](http://yuml.me/80473593)
+
+Différentes implémentations :
+
+<p align="center" >
+<img src="https://raw.githubusercontent.com/francoisandre/gdp/master/images/login1.png"   />
+</p>
+
+<p align="center" >
+<img src="https://raw.githubusercontent.com/francoisandre/gdp/master/images/login2.png"   />
+</p>
+
+<p align="center" >
+<img src="https://raw.githubusercontent.com/francoisandre/gdp/master/images/login3.png"   />
+</p>
+
+*Remarque :* 
+L'intelligence réside dans le présenter, la vue doit être la plus stupide possible.
+
+#### Description des implémentations
+
+Les éléments suivants peuvent permettre de decrire les implémentations
+
+##### Pour les vues : Maquette
+outils
+		-  pencil (http://pencil.evolus.vn/)
+		- MS Visio
+		- Draw.io
+		- Balsamiq
+		
+exemple
+	![enter image description here](https://upload.wikimedia.org/wikipedia/commons/4/47/Profilewireframe.png)
+
+> **Lorem Ipsum**
+> Il est souvent nécessaire de remplir les interface maquettée avec du texte fictif afin d'avoir un rendu réaliste. En général on utilise un texte latin appellé *Lorem Ipsum*. L'utilisation du latin permet de comprendre immédiatement qu'on n'est pas devant un texte réel.
+
+> Il existe 
+>  - des générateurs en ligne: http://fr.lipsum.com/
+>  - des librairies pour intégrer la génération au programme (en java par exemple). 
+
+##### Pour le modèle : Diagramme de classe 
+
+![enter image description here](http://laurent-audibert.developpez.com/Cours-UML/images/fig4_8.png)
+
+##### Pour les présenters :  **Les activités implémentent les présenters**
+Donc une bonne représentation est le diagramme des activités
 
 ## Etape 5 - Le développement
 
@@ -1140,7 +1263,14 @@ Un produit est souvent identifié par un numéro de la forme **X.Y.Z**
 
 
 ## Etape 6 - La recette
-Selenium
+
+### Acteur Principal
+
+MOA
+
+### 
+
+### Types d'anomalies
 
  
 ## Etape 7 - La conclusion du projet
